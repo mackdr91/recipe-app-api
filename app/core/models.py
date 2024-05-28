@@ -33,7 +33,6 @@ class UserManager(BaseUserManager):
         return user
 
 
-
 class User(AbstractBaseUser, PermissionsMixin):
     """user in the system."""
     email = models.EmailField(max_length=255, unique=True)
@@ -42,6 +41,5 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-
 
     objects = UserManager()
